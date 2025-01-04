@@ -1,26 +1,18 @@
-import {expect} from "@playwright/test";
+import { expect } from '@playwright/test';
 
 export class InputPage {
+  constructor(page) {
+    this.page = page;
+    this.inputField = page.locator('input');
+  }
 
-    constructor(page) {
+  async goTo() {
+    await this.page.goto('/inputs');
+  }
 
-        this.page = page;
-        this.inputField = page.locator("input");
+  async fillTextField(numberAsString) {
+    await this.inputField.fill(numberAsString);
 
-    }
-
-    async goTo() {
-
-        await this.page.goto('/inputs');
-
-    }
-
-    async fillTextField(numberAsString) {
-
-        await this.inputField.fill(numberAsString);
-
-        await expect(await this.inputField).toHaveValue(numberAsString);
-
-    }
-
+    await expect(await this.inputField).toHaveValue(numberAsString);
+  }
 }

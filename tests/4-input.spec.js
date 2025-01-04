@@ -1,9 +1,7 @@
-import {test} from '../fixtures/pages.fixture';
+import { test } from '../fixtures/pages.fixture';
 
-test('Fill text field with any number', async ({inputPage}) => {
+test('Fill text field with any number', async ({ inputPage }) => {
+  await inputPage.goTo();
 
-    await inputPage.goTo();
-
-    await inputPage.fillTextField("15");
-
+  await inputPage.fillTextField('15');
 });

@@ -1,13 +1,10 @@
-import {test} from '../fixtures/pages.fixture';
+import { test } from '../fixtures/pages.fixture';
 
-test('Read states and Select / Deselect checkboxes', async ({checkboxesPage}) => {
+test('Read states and Select / Deselect checkboxes', async ({ checkboxesPage }) => {
+  await checkboxesPage.goTo();
 
-    await checkboxesPage.goTo();
+  await checkboxesPage.readStates();
 
-    await checkboxesPage.readStates();
-
-    await checkboxesPage.changeStates();
-
-    await checkboxesPage.readStates();
-
+  await checkboxesPage.changeStates();
+  await checkboxesPage.readStates();
 });

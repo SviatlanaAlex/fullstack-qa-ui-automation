@@ -31,8 +31,8 @@ module.exports = defineConfig({
     // trace: 'on-first-retry', 'retain-on-failure'
     trace: 'on',
     headless: process.env.CI === 'true',
-    screenshot: "only-on-failure",
-    video: "retain-on-failure",
+    screenshot: 'only-on-failure',
+    video: 'retain-on-failure',
   },
 
   /* Configure projects for major browsers */
@@ -41,7 +41,7 @@ module.exports = defineConfig({
       name: 'chromium',
       use: {
         ...devices['Desktop Chrome'],
-        viewport: {width: 1600, height: 900},
+        viewport: { width: 1600, height: 900 },
       },
     },
 
@@ -83,4 +83,3 @@ module.exports = defineConfig({
   //   reuseExistingServer: !process.env.CI,
   // },
 });
-

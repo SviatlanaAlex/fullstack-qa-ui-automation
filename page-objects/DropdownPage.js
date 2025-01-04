@@ -1,27 +1,19 @@
-import {expect} from "@playwright/test";
+import { expect } from '@playwright/test';
 
 export class DropdownPage {
+  constructor(page) {
+    this.page = page;
+    this.dropdown = page.locator('#dropdown');
+  }
 
-    constructor(page) {
+  async goTo() {
+    await this.page.goto('/dropdown');
+  }
 
-        this.page = page;
-        this.dropdown = page.locator("#dropdown");
+  async selectAnOption(name) {
+    await this.dropdown.selectOption(name);
 
-    }
-
-    async goTo() {
-
-        await this.page.goto('/dropdown');
-
-    }
-
-    async selectAnOption(name) {
-
-        await this.dropdown.selectOption(name);
-
-        const chosenOptionValue = name.replace("Option ", "");
-        await expect(await this.dropdown).toHaveValue(chosenOptionValue);
-
-    }
-
+    const chosenOptionValue = name.replace('Option ', '');
+    await expect(await this.dropdown).toHaveValue(chosenOptionValue);
+  }
 }

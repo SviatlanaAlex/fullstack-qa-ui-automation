@@ -1,0 +1,9 @@
+# NOTE: Prettier also uses .gitignore file to determine which files to ignore.
+# So there would be a bit of redundancy if we mention same files as gitignore here.
+# Reference: https://prettier.io/docs/en/ignore
+
+# Ignores version control files and node_modules by default
+
+# Specify here only files that are not already ignored in .gitignore but that we
+# want to ignore in Prettier: such as visual snapshot compare files.
+**/*.png
